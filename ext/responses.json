@@ -1,0 +1,28 @@
+{
+    "responses": [
+        {
+            "name": "Greatings",
+            "condition": ["{msg}.lower() startswith hello", "{msg}.lower() startswith wsg"],
+            "relation": [],
+            "response": ["Hello", "What's up?", "Sup boss"],
+            "weights": [1, 1, 1]
+        },
+        {
+            "name": "Farewell",
+            "condition": ["{msg}.lower() endswith bye", "{msg}.lower() startswith bye"],
+            "relation": ["or"],
+            "response": ["Goodbye", "See you later", "Take care"],
+            "weights": [1, 1, 1]
+        },
+        {
+            "name": "Angry",
+            "condition": ["{msg}.lower() has gay", "{msg}.lower() has you"],
+            "relation": ["and"],
+            "response": ["Fuck off man", "Really bro? Fuck you."],
+            "weights": [1, 1] 
+        }
+    ],
+    "default": [
+        "What? I don't seem to understand this", "Yeah sure", "No", "Maybe"
+    ]
+}
